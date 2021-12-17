@@ -3,7 +3,7 @@ import "./App.css"
 import products from "./assets/products.json"
 import Product from "./components/Product";
 
-export default function Home() {
+export default function App() {
   return (
       <div className={"container"}>
         <main className={"main"}>
