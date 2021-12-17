@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css"
+import "./App.css"
+import products from "./assets/products.json"
+import Product from "./components/Product";
 
-function App() {
+export default function Home() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className={"container"}>
+        <main className={"main"}>
+          <h1>
+            E-Commerce in React and SnipCart
+          </h1>
+
+          <div className={"grid"}>
+            {
+              products.map((product, i) => <Product {...product} key={i}/>)
+            }
+          </div>
+        </main>
+        <div
+            id="snipcart"
+            data-api-key="NWMwZWNkZGMtZjU2ZS00YzM3LWFlZjYtMmM5Zjk0MWViZDcxNjM3Njg0OTY0ODg5NTk4MTM3" hidden
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+        </div>
+      </div>
   );
 }
-
-export default App;
