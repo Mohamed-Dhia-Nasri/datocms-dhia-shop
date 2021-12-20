@@ -17,7 +17,10 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="preconnect" href="https://app.snipcart.com" />
     <link rel="preconnect" href="https://cdn.snipcart.com" />
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css"
+    />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -43,8 +46,14 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script
-        src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js"
-        async
+      src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js"
+      async
     ></script>
+    <div
+      id="snipcart"
+      data-config-modal-style="side"
+      data-api-key="%REACT_APP_SNIPCART_API_KEY%"
+      hidden
+    ></div>
   </body>
 </html>

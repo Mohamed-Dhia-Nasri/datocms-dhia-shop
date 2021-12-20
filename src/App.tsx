@@ -46,11 +46,6 @@ export default function App() {
             products.map((product, i) => <Product product={product} key={i} />)}
         </div>
       </main>
-      <div
-        hidden
-        id="snipcart"
-        data-api-key={process.env.REACT_APP_SNIPCART_API_KEY}
-      ></div>
     </div>
   );
 }
