@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is created to demonstrate how to create a React ecommerce using Snipcart and DatoCMS.
+
+Read the full tutorial on [DatoCMS blog](https://www.datocms.com/blog/react-ecommerce-tutorial)
+
+## Register on Snipcart
+
+To see the fully working example you need to register on Snipcart and provide your REACT_APP_SNIPCART_API_KEY in your `.env.local` file
 
 ## Available Scripts
 
