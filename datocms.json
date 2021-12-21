@@ -1,0 +1,11 @@
+{
+  "name": "Ecommerce React + Snipcart",
+  "description": "A simple ecommerce website made with DatoCMS, React and Snipcart",
+  "previewImage": "https://www.datocms-assets.com/205/1640011361-react-ecommerce-tutorial.png",
+  "livePreviewUrl": "https://datocms-react-ecommerce-template.netlify.app/",
+  "repo": "https://github.com/datocms/ecommerce-demo-react-snipcart",
+  "datocmsProjectId": "56262",
+  "deploymentType": "static",
+  "datocmsApiTokenEnvName": "REACT_APP_DATOCMS_READONLY_API_KEY",
+  "buildCommand": "npm run build"
+}

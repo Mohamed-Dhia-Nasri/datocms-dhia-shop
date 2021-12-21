@@ -8,6 +8,10 @@ Read the full tutorial on [DatoCMS blog](https://www.datocms.com/blog/react-ecom
 
 To see the fully working example you need to register on Snipcart and provide your REACT_APP_SNIPCART_API_KEY in your `.env.local` file
 
+## Install from Github
+
+[![Clone DatoCMS project](https://dashboard.datocms.com/clone/button.svg)](https://dashboard.datocms.com/deploy?repo=https%3A%2F%2Fgithub.com%2Fdatocms%2Fecommerce-demo-react-snipcart)
+
 ## Available Scripts
 
 In the project directory, you can run:
