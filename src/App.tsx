@@ -1,40 +1,38 @@
-import "./index.css";
-import "./App.css";
-import Product from "./components/Product";
-// @ts-ignore
-import { SiteClient } from "datocms-client";
-import { useEffect } from "react";
-import { useState } from "react";
-import { ProductType, UploadType } from "./types";
+import './App.css';
+import Product from './components/Product';
+import { ProductType } from './types';
+import { buildClient } from '@datocms/cma-client-node';
+import { useCallback, useEffect, useState } from 'react';
 
-const client = new SiteClient(
-  process.env.REACT_APP_DATOCMS_READONLY_API_KEY ||
-    "54c731b10e58adae303dc14b37ffff"
-);
+const client = buildClient({
+  apiToken:
+    process.env.NEXT_PUBLIC_DATOCMS_READONLY_API_KEY ||
+    '54c731b10e58adae303dc14b37ffff',
+});
+
+const fetchUploads = async (p: ProductType) => {
+  const upload = await client.uploads.find(p.image.upload_id);
+
+  p.image = { ...p.image, ...upload };
+  return p;
+};
 
 export default function App() {
   const [products, setProducts] = useState<ProductType[] | null>(null);
 
+  const fetchProducts = useCallback(async () => {
+    const products = (await client.items.list({
+      filter: { type: 'product' },
+    })) as unknown as ProductType[];
+
+    const withImages = await Promise.all(products.map(fetchUploads));
+
+    setProducts(withImages);
+  }, [setProducts]);
+
   useEffect(() => {
-    const fetchProducts = async () => {
-      const allProducts = await client.items.all({
-        filter: { type: "product" },
-      });
-
-      const withImages = await Promise.all(
-        allProducts.map(async (p: ProductType) => {
-          const upload: UploadType = await client.upload.find(p.image.uploadId);
-
-          p.image = { ...p.image, ...upload };
-          return p;
-        })
-      );
-
-      setProducts(withImages);
-    };
-
     fetchProducts();
-  }, []);
+  }, [fetchProducts]);
 
   return (
     <div className="container">
