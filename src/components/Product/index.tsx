@@ -1,4 +1,5 @@
 import { ProductType } from '../../types';
+import './Product.css';
 
 export default function Product({ product }: { product: ProductType }) {
   const { id, image, name, description, price } = product;
@@ -9,7 +10,7 @@ export default function Product({ product }: { product: ProductType }) {
         src={image.url}
         alt={image.alt}
         title={image.title}
-        className={'image-product'}
+        className={'product-image'}
       />
       <h3>{name}</h3>
       <p>{description}</p>

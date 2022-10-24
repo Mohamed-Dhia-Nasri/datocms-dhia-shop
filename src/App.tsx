@@ -1,12 +1,12 @@
-import './App.css';
 import Product from './components/Product';
 import { ProductType } from './types';
-import { buildClient } from '@datocms/cma-client-node';
+import { buildClient } from '@datocms/cma-client-browser';
 import { useCallback, useEffect, useState } from 'react';
+import './App.css';
 
 const client = buildClient({
   apiToken:
-    process.env.NEXT_PUBLIC_DATOCMS_READONLY_API_KEY ||
+    process.env.REACT_APP_DATOCMS_READONLY_API_KEY ||
     '54c731b10e58adae303dc14b37ffff',
 });
 
