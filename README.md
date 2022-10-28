@@ -4,13 +4,33 @@ This project is created to demonstrate how to create a React ecommerce using Sni
 
 Read the full tutorial on [DatoCMS blog](https://www.datocms.com/blog/react-ecommerce-tutorial)
 
-## Register on Snipcart
+To see the fully working example you need to register on Snipcart and get your Snipcart public API key.
 
-To see the fully working example you need to register on Snipcart and provide your REACT_APP_SNIPCART_API_KEY in your `.env.local` file
+## Deploy the demo with DatoCMS
+
+You can install this demo right away by clicking on this button:
+
+[![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/deploy?repo=datocms/ecommerce-react-snipcart:main)
+
+The wizard will create a new DatoCMS project, will clone the demo repository on your GitHub, and will deploy it on Netlify or Vercel.
+
+### Deploying to Netlify
+
+For the demo to work you need to go in your Netlify project > settings > build & deploy > environment variables, and create a new env variable called "REACT_APP_SNIPCART_API_KEY". Paste in the value field the key you find in your Snipcart project > account settings > API keys > public API key.
+
+### Deploying to Vercel
+
+For the demo to work you need to go in your Vercel project > settings > environment variables, and create a new variable called "REACT_APP_SNIPCART_API_KEY". Paste in the value field the key you find in your Snipcart project > account settings > API keys > public API key.
+
+# Development
 
 ## Install from Github
 
 [![Clone DatoCMS project](https://dashboard.datocms.com/clone/button.svg)](https://dashboard.datocms.com/deploy?repo=https%3A%2F%2Fgithub.com%2Fdatocms%2Fecommerce-demo-react-snipcart)
+
+## Register on Snipcart
+
+Register on Snipcart and provide your REACT_APP_SNIPCART_API_KEY in your `.env.local` file
 
 ## Available Scripts
 
