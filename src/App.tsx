@@ -4,6 +4,10 @@ import { buildClient } from '@datocms/cma-client-browser';
 import { useCallback, useEffect, useState } from 'react';
 import './App.css';
 
+const snipcartApiToken =
+  process.env.REACT_APP_SNIPCART_API_KEY ||
+  'OWE3MmZmMjQtNTk3Yi00OThhLWEwMmUtZDY4ZWM4NzIwYzZiNjM2NjM0Mzc1NzE0MTUwNzI1';
+
 const client = buildClient({
   apiToken:
     process.env.REACT_APP_DATOCMS_READONLY_API_KEY ||
@@ -44,6 +48,12 @@ export default function App() {
             products.map((product, i) => <Product product={product} key={i} />)}
         </div>
       </main>
+      <div
+        id="snipcart"
+        data-config-modal-style="side"
+        data-api-key={snipcartApiToken}
+        hidden
+      ></div>
     </div>
   );
 }
